@@ -1,12 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import { render } from 'react-dom'
+import { injectGlobal } from 'emotion'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { DatabaseProvider } from './contexts/Database'
+import { App } from './App'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import 'normalize.css'
+import './fonts/Charter'
+import './fonts/FiraCode'
+
+injectGlobal`
+    html,
+    body {
+        background: #fffff3;
+        color: #2e343b;
+    }
+`
+
+render(
+    <DatabaseProvider>
+        <App />
+    </DatabaseProvider>,
+    document.getElementById('root')
+)
