@@ -46,7 +46,7 @@ export const Home: FunctionComponent<HomeProps> = () => {
                 const createdAt = postCreatedAt(post)
                 return (
                     <Paragraph key={post._id}>
-                        <Link internal to={`/${post.slug}`}>
+                        <Link internal to={`/${post._id}`}>
                             {post.title}
                         </Link>{' '}
                         <small>

@@ -10,21 +10,21 @@ import { Markdown } from '../components/Markdown'
 import { DBContext } from '../contexts/Database'
 
 export type PostProps = RouteComponentProps<{
-    slug: string
+    id: string
 }>
 
-export const Post: FunctionComponent<PostProps> = ({ slug }) => {
-    const { getPostBySlug } = useContext(DBContext)
+export const Post: FunctionComponent<PostProps> = ({ id }) => {
+    const { getPostById } = useContext(DBContext)
     const [post, setPost] = useState<PostModel>()
     const [error, setError] = useState<string | null>(null)
 
     useAsyncEffect(
         async () => {
-            if (!slug) {
+            if (!id) {
                 return setError('404')
             }
 
-            const post = await getPostBySlug(slug)
+            const post = await getPostById(id)
 
             if (!post) {
                 return setError('404')
@@ -33,7 +33,7 @@ export const Post: FunctionComponent<PostProps> = ({ slug }) => {
             setPost(post)
         },
         undefined,
-        [slug]
+        [id]
     )
 
     if (error === '404') {
@@ -52,13 +52,11 @@ export const Post: FunctionComponent<PostProps> = ({ slug }) => {
                 <Link internal to="/">
                     Back
                 </Link>
-                <span title={createdAt.toLocaleString()}>
-                    {distanceToNow(createdAt)} ago
-                </span>
+                <span title={createdAt.toLocaleString()}>{distanceToNow(createdAt)} ago</span>
                 <span>@{post.author}</span>
             </Nav>
             <Title>{post.title}</Title>
-            <Markdown text={post.content} />
+            <Markdown text={post.body} />
         </>
     )
 }

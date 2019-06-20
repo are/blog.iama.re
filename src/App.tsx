@@ -13,7 +13,7 @@ export const App = () => {
             <Router>
                 <Home path="/" />
                 <NotFound path="/404" />
-                <Post path="/:slug" />
+                <Post path="/:id" />
             </Router>
         </Container>
     )
