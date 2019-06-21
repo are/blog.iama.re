@@ -49,11 +49,12 @@ export const Post: FunctionComponent<PostProps> = ({ id }) => {
     return (
         <>
             <Nav>
-                <Link internal to="/">
-                    Back
-                </Link>
+                {post.bookId === 'book:qzMBCWsMV' && (
+                    <Link internal to="/">
+                        Back
+                    </Link>
+                )}
                 <span title={createdAt.toLocaleString()}>{distanceToNow(createdAt)} ago</span>
-                <span>@{post.author}</span>
             </Nav>
             <Title>{post.title}</Title>
             <Markdown text={post.body} />
