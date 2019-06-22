@@ -15,7 +15,8 @@ export type Result<T> = PouchDB.Core.ExistingDocument<T & PouchDB.Core.AllDocsMe
 export type DBContext = {
     getDatabaseInfo: () => Promise<PouchDB.Core.DatabaseInfo>
     getRecentPosts: (limit?: number, skip?: number) => Promise<Result<PostModel>[]>
-    getPostById: (slug: string) => Promise<Result<PostModel>>
+    getPostById: (id: string) => Promise<Result<PostModel>>
+    getAttachment: (id: string, filename: string) => Promise<Blob | Buffer>
 }
 
 export const DBContext = createContext<DBContext>({} as DBContext)
@@ -40,22 +41,18 @@ export const DatabaseProvider: FunctionComponent<DatabaseProviderProps> = ({ chi
     }, [])
 
     const getPostById = useCallback(async (id: string) => {
-        const result = await db.find({
-            selector: {
-                _id: {
-                    $eq: id,
-                },
-            },
-            limit: 1,
-        })
+        return db.get<PostModel>(id, { attachments: true })
+    }, [])
 
-        return result.docs[0] as PouchDB.Core.ExistingDocument<PostModel & PouchDB.Core.AllDocsMeta>
+    const getAttachment = useCallback(async (id: string, filename: string) => {
+        return db.getAttachment(id, filename)
     }, [])
 
     const contextValue: DBContext = {
         getDatabaseInfo,
         getRecentPosts,
         getPostById,
+        getAttachment,
     }
 
     return <DBContext.Provider value={contextValue}>{children}</DBContext.Provider>

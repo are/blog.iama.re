@@ -3,12 +3,14 @@ import { css } from 'emotion'
 
 const styles = {
     root: css`
+        display: block;
         margin: 0 auto;
         position: relative;
         width: 64px;
         height: 64px;
 
-        & > div {
+        & > span {
+            display: block;
             position: absolute;
             border: 4px solid #2e343b;
             opacity: 1;
@@ -16,7 +18,7 @@ const styles = {
             animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
         }
 
-        & > div:nth-of-type(2) {
+        & > span:nth-of-type(2) {
             animation-delay: -0.5s;
         }
 
@@ -41,9 +43,9 @@ const styles = {
 
 export const Spinner: FunctionComponent<{}> = () => {
     return (
-        <div className={styles.root}>
-            <div />
-            <div />
-        </div>
+        <span className={styles.root}>
+            <span />
+            <span />
+        </span>
     )
 }
