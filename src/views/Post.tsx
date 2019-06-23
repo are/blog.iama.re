@@ -3,7 +3,7 @@ import { RouteComponentProps, Redirect } from '@reach/router'
 import distanceToNow from 'date-fns/formatDistanceToNow'
 import { useAsyncEffect } from 'use-async-effect'
 
-import { PostModel, postCreatedAt } from '../models/Post'
+import { PostModel, postCreatedAt, postUpdatedAt } from '../models/Post'
 
 import { Title, Nav, Link, Spinner } from '../components'
 import { Markdown } from '../components/Markdown'
@@ -45,6 +45,7 @@ export const Post: FunctionComponent<PostProps> = ({ id }) => {
     }
 
     const createdAt = postCreatedAt(post)
+    const updatedAt = postUpdatedAt(post)
 
     return (
         <>
@@ -54,7 +55,10 @@ export const Post: FunctionComponent<PostProps> = ({ id }) => {
                         Back
                     </Link>
                 )}
-                <span title={createdAt.toLocaleString()}>{distanceToNow(createdAt)} ago</span>
+                <span title={createdAt.toLocaleString()}>
+                    {distanceToNow(createdAt)} ago
+                    {updatedAt > createdAt && <em> (updated {distanceToNow(updatedAt)} ago)</em>}
+                </span>
             </Nav>
             <Title>{post.title}</Title>
             <Markdown text={post.body} />
