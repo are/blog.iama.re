@@ -4,6 +4,8 @@ import { css, cx } from 'emotion'
 
 import ts from 'react-syntax-highlighter/dist/languages/prism/typescript'
 import js from 'react-syntax-highlighter/dist/languages/prism/jsx'
+import yaml from 'react-syntax-highlighter/dist/languages/prism/yaml'
+import twig from 'react-syntax-highlighter/dist/languages/prism/twig'
 
 import { vs } from './themes'
 
@@ -21,6 +23,8 @@ const styles = {
 
 PrismLight.registerLanguage('ts', ts)
 PrismLight.registerLanguage('js', js)
+PrismLight.registerLanguage('yml', yaml)
+PrismLight.registerLanguage('twig', twig)
 
 export const PreTag: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
     return <pre className={styles.pre}>{children}</pre>
@@ -32,12 +36,14 @@ export const CodeTag: FunctionComponent<{ children: ReactNode }> = ({ children }
 
 export type CodeProps = {
     children: string
-    language?: 'ts' | 'js'
+    className?: string
 }
 
-export const Code: FunctionComponent<CodeProps> = ({ children, language = 'ts' }) => {
+export const Code: FunctionComponent<CodeProps> = ({ children, className }) => {
+    const [, lang] = (className || 'language-plaintext').split('-')
+
     return (
-        <PrismLight useInlineStyles={false} language={language} PreTag={PreTag} CodeTag={CodeTag}>
+        <PrismLight useInlineStyles={false} language={lang} PreTag={PreTag} CodeTag={CodeTag}>
             {children}
         </PrismLight>
     )

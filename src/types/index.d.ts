@@ -33,6 +33,16 @@ declare module 'react-syntax-highlighter/dist/languages/prism/typescript' {
     export default language
 }
 
+declare module 'react-syntax-highlighter/dist/languages/prism/yaml' {
+    var language: string
+    export default language
+}
+
+declare module 'react-syntax-highlighter/dist/languages/prism/twig' {
+    var language: string
+    export default language
+}
+
 declare module '**.ttf' {
     var fontUrl: string
     export default fontUrl
