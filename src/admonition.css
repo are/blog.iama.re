@@ -5,7 +5,6 @@
     padding: 0 1.2rem;
     border-left: 0.4rem solid #448aff;
     border-radius: 0.2rem;
-    overflow: auto;
 }
 .admonition > summary {
     cursor: pointer;
@@ -37,7 +36,6 @@
     padding: 0 1.2rem;
     border-left: 0.4rem solid #448aff;
     border-radius: 0.2rem;
-    overflow: auto;
     border-left-color: #448aff;
 }
 .admonition-note > summary {
@@ -56,7 +54,6 @@
     padding: 0 1.2rem;
     border-left: 0.4rem solid #448aff;
     border-radius: 0.2rem;
-    overflow: auto;
     border-left-color: #009688;
 }
 .admonition-info > summary {
@@ -75,7 +72,6 @@
     padding: 0 1.2rem;
     border-left: 0.4rem solid #448aff;
     border-radius: 0.2rem;
-    overflow: auto;
     border-left-color: #c2185b;
 }
 .admonition-danger > summary {
@@ -94,7 +90,6 @@
     padding: 0 1.2rem;
     border-left: 0.4rem solid #448aff;
     border-radius: 0.2rem;
-    overflow: auto;
     border-left-color: #ff9100;
 }
 .admonition-warning > summary {
@@ -113,7 +108,6 @@
     padding: 0 1.2rem;
     border-left: 0.4rem solid #448aff;
     border-radius: 0.2rem;
-    overflow: auto;
     border-left-color: #00c853;
 }
 .admonition-success > summary {
@@ -132,7 +126,6 @@
     padding: 0 1.2rem;
     border-left: 0.4rem solid #448aff;
     border-radius: 0.2rem;
-    overflow: auto;
     border-left-color: #d32f2f;
 }
 .admonition-fail > summary {
@@ -151,7 +144,6 @@
     padding: 0 1.2rem;
     border-left: 0.4rem solid #448aff;
     border-radius: 0.2rem;
-    overflow: auto;
     border-left-color: #64dd17;
 }
 .admonition-question > summary {
@@ -170,7 +162,6 @@
     padding: 0 1.2rem;
     border-left: 0.4rem solid #448aff;
     border-radius: 0.2rem;
-    overflow: auto;
     border-left-color: #00b0ff;
 }
 .admonition-abstract > summary {
@@ -189,7 +180,6 @@
     padding: 0 1.2rem;
     border-left: 0.4rem solid #448aff;
     border-radius: 0.2rem;
-    overflow: auto;
     border-left-color: #651fff;
 }
 .admonition-example > summary {
@@ -208,7 +198,6 @@
     padding: 0 1.2rem;
     border-left: 0.4rem solid #448aff;
     border-radius: 0.2rem;
-    overflow: auto;
     border-left-color: #455a64;
 }
 .admonition-spoiler > summary {
@@ -220,4 +209,8 @@
 .admonition-spoiler > .custom-block-heading {
     padding-left: 1rem;
     background-color: rgba(69, 90, 100, 0.1);
+}
+
+.custom-block-body {
+    overflow: auto;
 }
