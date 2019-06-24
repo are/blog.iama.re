@@ -7,8 +7,6 @@ import { Home } from './views/Home'
 import { Post } from './views/Post'
 import { NotFound } from './views/404'
 
-import './admonition.css'
-
 export const App = () => {
     return (
         <Container>

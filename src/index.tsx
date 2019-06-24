@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { hydrate } from 'react-dom'
 import { injectGlobal } from 'emotion'
 
 import { DatabaseProvider } from './contexts/Database'
@@ -8,6 +8,7 @@ import { App } from './App'
 import 'normalize.css'
 import './fonts/Charter'
 import './fonts/FiraCode'
+import './admonition.css'
 
 injectGlobal`
     html,
@@ -17,7 +18,7 @@ injectGlobal`
     }
 `
 
-render(
+hydrate(
     <DatabaseProvider>
         <App />
     </DatabaseProvider>,

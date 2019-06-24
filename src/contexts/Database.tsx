@@ -1,7 +1,7 @@
 import React, { createContext, ReactNode, FunctionComponent, useCallback } from 'react'
 import PouchDB from 'pouchdb-browser'
 import PouchDBFind from 'pouchdb-find'
-import prop from 'ramda/es/prop'
+import { prop } from 'ramda'
 
 import { DB_URL } from '../constants'
 import { PostModel } from '../models/Post'

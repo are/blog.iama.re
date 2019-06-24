@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState, useContext } from 'react'
 import { RouteComponentProps, Redirect } from '@reach/router'
 import distanceToNow from 'date-fns/formatDistanceToNow'
 import { useAsyncEffect } from 'use-async-effect'
+import Helmet from 'react-helmet'
 
 import { PostModel, postCreatedAt, postUpdatedAt } from '../models/Post'
 
@@ -57,6 +58,12 @@ export const Post: FunctionComponent<PostProps> = ({ id }) => {
 
     return (
         <>
+            <Helmet>
+                <meta property="og:title" content={post.title} />
+                <meta property="og:type" content="article" />
+                <meta property="og:url" content={`https://blog.iama.re/${id}`} />
+                <meta property="og:image" content="https://dummyimage.com/600x400/000/fff&text=blog.iama.re" />
+            </Helmet>
             <Nav>
                 {post.bookId === 'book:qzMBCWsMV' && (
                     <Link internal to="/">

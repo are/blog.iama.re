@@ -7,7 +7,7 @@ declare module 'hyphen' {
     export default function createHyphenator(patterns: HyphenationPatterns): (text: string) => string
 }
 
-declare module 'hyphen/patterns/en-us' {
+declare module 'hyphen/patterns/en-us.js' {
     import { HyphenationPatterns } from 'hyphen'
 
     var englishHyphenationPatterns: HyphenationPatterns
@@ -15,7 +15,7 @@ declare module 'hyphen/patterns/en-us' {
     export default englishHyphenationPatterns
 }
 
-declare module 'hyphen/patterns/pl' {
+declare module 'hyphen/patterns/pl.js' {
     import { HyphenationPatterns } from 'hyphen'
 
     var polishHyphenationPatterns: HyphenationPatterns
@@ -43,15 +43,9 @@ declare module 'react-syntax-highlighter/dist/languages/prism/twig' {
     export default language
 }
 
-declare module '**.ttf' {
+declare module '*.ttf' {
     var fontUrl: string
     export default fontUrl
-}
-
-declare module 'react-markdown/with-html' {
-    import ReactMarkdown from 'react-markdown'
-
-    export default ReactMarkdown
 }
 
 declare module '@mdx-js/runtime' {

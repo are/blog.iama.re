@@ -1,9 +1,9 @@
 import React, { FunctionComponent, ReactNode, ReactNodeArray } from 'react'
 import { css, cx } from 'emotion'
 
-import createHyphenator from 'hyphen'
-import englishHyphenationPatterns from 'hyphen/patterns/en-us'
-import polishHyphenationPatterns from 'hyphen/patterns/pl'
+import hyphen from 'hyphen'
+import englishHyphenationPatterns from 'hyphen/patterns/en-us.js'
+import polishHyphenationPatterns from 'hyphen/patterns/pl.js'
 
 const styles = {
     paragraph: css`
@@ -23,8 +23,8 @@ export type ParagraphProps = {
     language?: 'en' | 'pl'
 }
 
-const englishHyphenate = createHyphenator(englishHyphenationPatterns)
-const polishHyphenate = createHyphenator(polishHyphenationPatterns)
+const englishHyphenate = hyphen(englishHyphenationPatterns)
+const polishHyphenate = hyphen(polishHyphenationPatterns)
 
 export const Paragraph: FunctionComponent<ParagraphProps> = ({
     children,
@@ -56,9 +56,5 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
         })
     }
 
-    return (
-        <p className={cx(styles.paragraph, { [styles.indent]: indent })}>
-            {childrenArray}
-        </p>
-    )
+    return <p className={cx(styles.paragraph, { [styles.indent]: indent })}>{childrenArray}</p>
 }
