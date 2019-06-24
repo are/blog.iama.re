@@ -22,15 +22,11 @@ const styles = {
 PrismLight.registerLanguage('ts', ts)
 PrismLight.registerLanguage('js', js)
 
-export const PreTag: FunctionComponent<{ children: ReactNode }> = ({
-    children,
-}) => {
+export const PreTag: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
     return <pre className={styles.pre}>{children}</pre>
 }
 
-export const CodeTag: FunctionComponent<{ children: ReactNode }> = ({
-    children,
-}) => {
+export const CodeTag: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
     return <code className={cx(styles.code, vs)}>{children}</code>
 }
 
@@ -39,17 +35,9 @@ export type CodeProps = {
     language?: 'ts' | 'js'
 }
 
-export const Code: FunctionComponent<CodeProps> = ({
-    children,
-    language = 'ts',
-}) => {
+export const Code: FunctionComponent<CodeProps> = ({ children, language = 'ts' }) => {
     return (
-        <PrismLight
-            useInlineStyles={false}
-            language={language}
-            PreTag={PreTag}
-            CodeTag={CodeTag}
-        >
+        <PrismLight useInlineStyles={false} language={language} PreTag={PreTag} CodeTag={CodeTag}>
             {children}
         </PrismLight>
     )

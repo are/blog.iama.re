@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import MDX from '@mdx-js/runtime'
 import remarkCustomBlocks from 'remark-custom-blocks'
 
-import { Paragraph, Sidenote, Code, Link, Image, H1, H2, H3, H4 } from '../index'
+import { Paragraph, Sidenote, Code, Link, Image, H1, H2, H3, H4, CodeTag } from '../index'
 
 const admonitionConfig: Record<string, { classes: string; title: string; details?: boolean }> = {}
 const admonitionTypes = ['abstract', 'note', 'danger', 'warning', 'info', 'success', 'fail', 'question', 'example']
@@ -39,6 +39,7 @@ export const Markdown: FunctionComponent<MarkdownProps> = ({ text, scope = {} })
                 p: Paragraph,
                 aside: Sidenote,
                 code: Code,
+                inlineCode: CodeTag,
                 a: Link,
                 img: Image,
                 h1: H1,
