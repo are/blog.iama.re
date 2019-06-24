@@ -1,5 +1,5 @@
-import React, { FunctionComponent, ReactNode, useContext, useState } from 'react'
-import { css } from 'emotion'
+import React, { FunctionComponent, useContext, useState } from 'react'
+import { css, cx } from 'emotion'
 import { DBContext } from '../../contexts/Database'
 import { useAsyncEffect } from 'use-async-effect'
 import { Spinner } from '../Spinner'
@@ -11,12 +11,12 @@ const styles = {
 }
 
 export type ImageProps = {
-    children: ReactNode
     alt: string
     src: string
+    style?: string
 }
 
-export const Image: FunctionComponent<ImageProps> = ({ children, src: initialSrc, alt }) => {
+export const Image: FunctionComponent<ImageProps> = ({ src: initialSrc, alt, style = '' }) => {
     const urlObj = new URL(initialSrc)
 
     const { getAttachment } = useContext(DBContext)
@@ -46,5 +46,16 @@ export const Image: FunctionComponent<ImageProps> = ({ children, src: initialSrc
         )
     }
 
-    return <img className={styles.image} src={src} alt={alt} />
+    return (
+        <img
+            className={cx(
+                styles.image,
+                css`
+                    ${style}
+                `
+            )}
+            src={src}
+            alt={alt}
+        />
+    )
 }

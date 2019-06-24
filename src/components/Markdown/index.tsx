@@ -34,7 +34,9 @@ export const Markdown: FunctionComponent<MarkdownProps> = ({ text, scope = {} })
     return (
         <MDX
             remarkPlugins={[[remarkCustomBlocks, admonitionConfig]]}
-            scope={scope}
+            scope={{
+                ...scope,
+            }}
             components={{
                 p: Paragraph,
                 aside: Sidenote,
