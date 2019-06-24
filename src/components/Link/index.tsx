@@ -5,15 +5,9 @@ import { css } from 'emotion'
 const styles = {
     link: css`
         transition: all 0.4s ease;
-        text-decoration: none;
-        font-variant: small-caps;
         color: inherit;
-
-        font-size: 1.2em;
-        font-weight: bold;
-        letter-spacing: 2px;
-        text-transform: lowercase;
         line-height: 1;
+        color: #001f3f;
 
         &:hover {
             transition: all 0.4s ease;
@@ -28,11 +22,7 @@ export type LinkProps = {
     [key: string]: any
 }
 
-export const Link: FunctionComponent<LinkProps> = ({
-    children,
-    internal,
-    ...rest
-}) => {
+export const Link: FunctionComponent<LinkProps> = ({ children, internal, ...rest }) => {
     if (internal) {
         return (
             <RouterLink className={styles.link} {...rest}>

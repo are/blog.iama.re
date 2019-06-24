@@ -1,0 +1,223 @@
+.admonition {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 1.5625em 0;
+    padding: 0 1.2rem;
+    border-left: 0.4rem solid #448aff;
+    border-radius: 0.2rem;
+    overflow: auto;
+}
+.admonition > summary {
+    cursor: pointer;
+}
+.admonition > .custom-block-body {
+    margin: 1em 0;
+}
+.admonition-title,
+.admonition-note > .custom-block-heading,
+.admonition-info > .custom-block-heading,
+.admonition-danger > .custom-block-heading,
+.admonition-warning > .custom-block-heading,
+.admonition-success > .custom-block-heading,
+.admonition-fail > .custom-block-heading,
+.admonition-question > .custom-block-heading,
+.admonition-abstract > .custom-block-heading,
+.admonition-example > .custom-block-heading,
+.admonition-spoiler > .custom-block-heading {
+    margin: 0 -1.2rem;
+    padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+    border-bottom: 0.1rem solid rgba(68, 138, 255, 0.1);
+    background-color: rgba(68, 138, 255, 0.1);
+    font-weight: 700;
+}
+.admonition-note {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 1.5625em 0;
+    padding: 0 1.2rem;
+    border-left: 0.4rem solid #448aff;
+    border-radius: 0.2rem;
+    overflow: auto;
+    border-left-color: #448aff;
+}
+.admonition-note > summary {
+    cursor: pointer;
+}
+.admonition-note > .custom-block-body {
+    margin: 1em 0;
+}
+.admonition-note > .custom-block-heading {
+    background-color: rgba(68, 138, 255, 0.1);
+}
+.admonition-info {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 1.5625em 0;
+    padding: 0 1.2rem;
+    border-left: 0.4rem solid #448aff;
+    border-radius: 0.2rem;
+    overflow: auto;
+    border-left-color: #009688;
+}
+.admonition-info > summary {
+    cursor: pointer;
+}
+.admonition-info > .custom-block-body {
+    margin: 1em 0;
+}
+.admonition-info > .custom-block-heading {
+    background-color: rgba(0, 150, 136, 0.1);
+}
+.admonition-danger {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 1.5625em 0;
+    padding: 0 1.2rem;
+    border-left: 0.4rem solid #448aff;
+    border-radius: 0.2rem;
+    overflow: auto;
+    border-left-color: #c2185b;
+}
+.admonition-danger > summary {
+    cursor: pointer;
+}
+.admonition-danger > .custom-block-body {
+    margin: 1em 0;
+}
+.admonition-danger > .custom-block-heading {
+    background-color: rgba(194, 24, 91, 0.1);
+}
+.admonition-warning {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 1.5625em 0;
+    padding: 0 1.2rem;
+    border-left: 0.4rem solid #448aff;
+    border-radius: 0.2rem;
+    overflow: auto;
+    border-left-color: #ff9100;
+}
+.admonition-warning > summary {
+    cursor: pointer;
+}
+.admonition-warning > .custom-block-body {
+    margin: 1em 0;
+}
+.admonition-warning > .custom-block-heading {
+    background-color: rgba(255, 145, 0, 0.1);
+}
+.admonition-success {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 1.5625em 0;
+    padding: 0 1.2rem;
+    border-left: 0.4rem solid #448aff;
+    border-radius: 0.2rem;
+    overflow: auto;
+    border-left-color: #00c853;
+}
+.admonition-success > summary {
+    cursor: pointer;
+}
+.admonition-success > .custom-block-body {
+    margin: 1em 0;
+}
+.admonition-success > .custom-block-heading {
+    background-color: rgba(0, 200, 83, 0.1);
+}
+.admonition-fail {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 1.5625em 0;
+    padding: 0 1.2rem;
+    border-left: 0.4rem solid #448aff;
+    border-radius: 0.2rem;
+    overflow: auto;
+    border-left-color: #d32f2f;
+}
+.admonition-fail > summary {
+    cursor: pointer;
+}
+.admonition-fail > .custom-block-body {
+    margin: 1em 0;
+}
+.admonition-fail > .custom-block-heading {
+    background-color: rgba(211, 47, 47, 0.1);
+}
+.admonition-question {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 1.5625em 0;
+    padding: 0 1.2rem;
+    border-left: 0.4rem solid #448aff;
+    border-radius: 0.2rem;
+    overflow: auto;
+    border-left-color: #64dd17;
+}
+.admonition-question > summary {
+    cursor: pointer;
+}
+.admonition-question > .custom-block-body {
+    margin: 1em 0;
+}
+.admonition-question > .custom-block-heading {
+    background-color: rgba(100, 221, 23, 0.1);
+}
+.admonition-abstract {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 1.5625em 0;
+    padding: 0 1.2rem;
+    border-left: 0.4rem solid #448aff;
+    border-radius: 0.2rem;
+    overflow: auto;
+    border-left-color: #00b0ff;
+}
+.admonition-abstract > summary {
+    cursor: pointer;
+}
+.admonition-abstract > .custom-block-body {
+    margin: 1em 0;
+}
+.admonition-abstract > .custom-block-heading {
+    background-color: rgba(0, 176, 255, 0.1);
+}
+.admonition-example {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 1.5625em 0;
+    padding: 0 1.2rem;
+    border-left: 0.4rem solid #448aff;
+    border-radius: 0.2rem;
+    overflow: auto;
+    border-left-color: #651fff;
+}
+.admonition-example > summary {
+    cursor: pointer;
+}
+.admonition-example > .custom-block-body {
+    margin: 1em 0;
+}
+.admonition-example > .custom-block-heading {
+    background-color: rgba(101, 31, 255, 0.1);
+}
+.admonition-spoiler {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 1.5625em 0;
+    padding: 0 1.2rem;
+    border-left: 0.4rem solid #448aff;
+    border-radius: 0.2rem;
+    overflow: auto;
+    border-left-color: #455a64;
+}
+.admonition-spoiler > summary {
+    cursor: pointer;
+}
+.admonition-spoiler > .custom-block-body {
+    margin: 1em 0;
+}
+.admonition-spoiler > .custom-block-heading {
+    padding-left: 1rem;
+    background-color: rgba(69, 90, 100, 0.1);
+}

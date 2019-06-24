@@ -4,9 +4,7 @@ declare module 'hyphen' {
         exceptions: string[]
     }
 
-    export default function createHyphenator(
-        patterns: HyphenationPatterns
-    ): (text: string) => string
+    export default function createHyphenator(patterns: HyphenationPatterns): (text: string) => string
 }
 
 declare module 'hyphen/patterns/en-us' {
@@ -60,4 +58,10 @@ declare module '@mdx-js/runtime' {
     var MDX: FunctionComponent<MDXProps>
 
     export default MDX
+}
+
+declare module 'remark-custom-blocks' {
+    var plugin: any
+
+    export default plugin
 }
