@@ -24,13 +24,21 @@ export const Post: FunctionComponent<PostProps> = ({ id }) => {
                 return setError('404')
             }
 
-            const post = await getPostById(id)
+            try {
+                const post = await getPostById(id)
 
-            if (!post) {
+                if (!post) {
+                    return setError('404')
+                }
+
+                setPost(post)
+            } catch (e) {
+                if (e.error === 'not_found') {
+                    return setError('404')
+                }
+
                 return setError('404')
             }
-
-            setPost(post)
         },
         undefined,
         [id]
