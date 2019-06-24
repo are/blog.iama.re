@@ -11,7 +11,7 @@ const styles = {
 
         margin: 100px;
 
-        width: 600px;
+        width: 960px;
     `,
 }
 
