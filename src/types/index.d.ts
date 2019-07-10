@@ -43,6 +43,20 @@ declare module 'react-syntax-highlighter/dist/languages/prism/twig' {
     export default language
 }
 
+declare module 'remark-macro' {
+    type Transformer = (content: string, props: any) => any
+    type InlineTransformer = (props: any) => any
+    interface Macro {
+        addMacro(name: string, fn: Transformer, inline: false): void
+        addMacro(name: string, fn: InlineTransformer, inline: true): void
+
+        transformer: any
+    }
+
+    var macro: () => Macro
+    export default macro
+}
+
 declare module '**.ttf' {
     var fontUrl: string
     export default fontUrl
@@ -74,4 +88,13 @@ declare module 'remark-custom-blocks' {
     var plugin: any
 
     export default plugin
+}
+
+declare module '@microlink/react' {
+    var microlink: FuncitonComponent<{
+        url: string
+        [key: string]: string
+    }>
+
+    export default microlink
 }

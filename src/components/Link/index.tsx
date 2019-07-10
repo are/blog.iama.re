@@ -1,6 +1,7 @@
 import React, { FunctionComponent, ReactNode } from 'react'
 import { Link as RouterLink } from '@reach/router'
 import { css } from 'emotion'
+import Microlink from '@microlink/react'
 
 const styles = {
     link: css`
@@ -23,6 +24,10 @@ export type LinkProps = {
 }
 
 export const Link: FunctionComponent<LinkProps> = ({ children, internal, ...rest }) => {
+    if (rest.className && rest.className === 'link-previews') {
+        return <Microlink url={rest.href} />
+    }
+
     if (internal) {
         return (
             <RouterLink className={styles.link} {...rest}>
